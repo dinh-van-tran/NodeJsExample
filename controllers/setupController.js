@@ -2,7 +2,7 @@ var MongoClient = require('mongodb').MongoClient;
 var url = 'mongodb://localhost:27017/todoApp';
 
 module.exports = function(app) {
-    app.get('/setupTodos', function(req, res) {
+    app.get('/setupTodos', function(request, response) {
         var starterTodos = [
             {
                 username: 'test',
@@ -47,9 +47,10 @@ module.exports = function(app) {
 
                     console.log('Number of todos inserted: ' + res.insertedCount);
 
+                    response.writeHead(200, {'Content-Type':'application/json'});
+                    response.end(JSON.stringify(res));
+
                     db.close();
-                    res.writeHead(200, {'Content-Type': 'text/plain'});
-                    res.end('Number of todos inserted: ' + res.insertedCount);
                 });
             });
         });
