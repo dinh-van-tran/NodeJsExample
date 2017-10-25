@@ -1,22 +1,22 @@
+<!DOCTYPE html>
 <html>
 	<head>
-		<title>Todo Application</title>
+		<title>Gmail API Quickstart</title>
+		<meta charset="utf-8"/>
 	</head>
 	<body>
-		<table>
-			<thead>
-				<tr>
-					<th>Usersname</th>
-					<th>Todo</th>
-					<th>isDone</th>
-					<th>hasAttachment</th>
-				</tr>
-			</thead>
-			<tbody>
+		<p>Gmail API Quickstart</p>
 
-			</tbody>
-		</table>
+		<!-- Add buttons to iniiate auth sequence and sign out -->
+		<button id="authorize-button" style="display: none">Authorize</button>
+		<button id="signout-button" style="display: none">Sign Out</button>
+
+		<pre id="content"></pre>
+
+		<script src="https://js.kintone.com/jquery/1.12.4/jquery.min.js"></script>
+		<script src="/assets/js/config.js"></script>
+		<script src="/assets/js/script.js"></script>
+		<script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()">
+		</script>
 	</body>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="/assets/js/script.js"></script>
 </html>
